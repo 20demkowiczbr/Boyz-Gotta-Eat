@@ -21,7 +21,7 @@ public class TitleScreen extends Application {
 		
 		startButton.setText("Start");
 		
-		final Image titleScreen = new Image("asset/Stegosaurus.jpg");
+		final Image titleScreen = new Image("Resources\\bg.jpg");
 			
 			final ImageView titleNode = new ImageView();
 			titleNode.setImage(titleScreen);
