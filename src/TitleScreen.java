@@ -27,6 +27,7 @@ public class TitleScreen extends Application {
 			titleNode.setImage(titleScreen);
 			
 			stage.setTitle("TBD");
+			stage.setScene(scene);
 			stage.getIcons().add(titleScreen);
 			
 	}
