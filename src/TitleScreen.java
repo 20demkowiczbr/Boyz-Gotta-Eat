@@ -22,11 +22,11 @@ public class TitleScreen extends Application {
 	
 		
 		final Image titleScreen = new Image("asset/bg.jpg");
+
 			
 			final ImageView titleNode = new ImageView();
 			titleNode.setImage(titleScreen);
 			
-			stage.getIcons().add(titleScreen);
 			
 			Group node = new Group();
 			stage.setTitle("TBD");	
