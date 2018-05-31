@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -19,8 +21,6 @@ public class TitleScreen extends Application {
 	    }
 	 
 	public void start(Stage stage) throws Exception{
-		
-	
 		
 		final Image titleScreen = new Image("asset/bg.jpg");
 
@@ -48,8 +48,13 @@ public class TitleScreen extends Application {
 			
 			startButton.setOnAction(new EventHandler<ActionEvent>(){
 		           public void handle(ActionEvent event) {
-		               LevelSelector map = new LevelSelector;
-		               map.Start(stage);
+		               LevelSelector map = new LevelSelector();
+		               try {
+						map.start(stage);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 		           }
 		       });
 	}

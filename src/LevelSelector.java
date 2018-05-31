@@ -1,4 +1,3 @@
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -13,8 +12,14 @@ import javafx.scene.*;
 
 public class LevelSelector {
 
-	final Image map = new Image("asset/map.jpg");
+	public void start(Stage stage) throws Exception{
 	
-	final ImageView mapNode = new ImageView();
-	mapNode.setImage(map);
+		final Image map = new Image("asset/map.png");
+		final ImageView mapNode = new ImageView();
+		mapNode.setImage(map);
+		Group node = new Group();
+		node.getChildren().addAll(mapNode);
+
+		stage.show();
+	}
 }
