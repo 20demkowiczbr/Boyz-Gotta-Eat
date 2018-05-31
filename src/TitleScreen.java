@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.*;
@@ -34,17 +35,20 @@ public class TitleScreen extends Application {
 			Scene scene = new Scene(node, 680, 480);
 			stage.setScene(scene);
 				
-			GridPane pane = new GridPane();
-			pane.setPadding(new Insets(10, 10, 10, 10));
-	        pane.setMinSize(300, 300);
-	        pane.setVgap(10);
-	        pane.setHgap(10);
+			StackPane pane = new StackPane();
+			//pane.setPadding(new Insets(10, 10, 10, 10));
+	        //pane.setMinSize(300, 300);
+	        //pane.setVgap(10);
+	        //pane.setHgap(10);
 	
 		
-		Button startButton = new Button();
+	        Button startButton = new Button();
 		
-		startButton.setText("Start");
-		node.getChildren().add(pane);
+			startButton.setText("Start");
+			
+			pane.getChildren().addAll(titleNode, startButton);
+			
+			node.getChildren().add(pane);
 			stage.show();
 			
 	}
