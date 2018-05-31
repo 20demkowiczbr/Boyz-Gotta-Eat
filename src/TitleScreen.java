@@ -36,11 +36,6 @@ public class TitleScreen extends Application {
 			stage.setScene(scene);
 				
 			StackPane pane = new StackPane();
-			//pane.setPadding(new Insets(10, 10, 10, 10));
-	        //pane.setMinSize(300, 300);
-	        //pane.setVgap(10);
-	        //pane.setHgap(10);
-	
 		
 	        Button startButton = new Button();
 		
@@ -51,6 +46,12 @@ public class TitleScreen extends Application {
 			node.getChildren().add(pane);
 			stage.show();
 			
+			startButton.setOnAction(new EventHandler<ActionEvent>(){
+		           public void handle(ActionEvent event) {
+		               LevelSelector map = new LevelSelector;
+		               map.Start(stage);
+		           }
+		       });
 	}
 	//680x480
 }
