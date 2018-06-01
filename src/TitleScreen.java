@@ -19,17 +19,18 @@ public class TitleScreen extends Application {
 	 public static void main(String[] args) {
 	        launch(args);
 	    }
-	 
+	static Group node;
+	static Stage mainStage;
 	public void start(Stage stage) throws Exception{
 		
 		final Image titleScreen = new Image("asset/bg.jpg");
 
-			
+			mainStage = stage;
 			final ImageView titleNode = new ImageView();
 			titleNode.setImage(titleScreen);
 			
 			
-			Group node = new Group();
+			node = new Group();
 			stage.setTitle("TBD");	
 			node.getChildren().addAll(titleNode);
 			Scene scene = new Scene(node, 680, 480);
@@ -59,4 +60,11 @@ public class TitleScreen extends Application {
 		       });
 	}
 	//680x480
+	
+	public static void sceneChanger(Scene newScene) {
+		Scene scene = new Scene(node, 680, 480);
+		mainStage.setScene(scene);
+		
+	}
 }
+
