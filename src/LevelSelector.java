@@ -1,3 +1,5 @@
+import com.sun.glass.ui.Application;
+
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -11,7 +13,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.*;
 
-public class LevelSelector {
+public abstract class LevelSelector extends Application{
 
 	public void start(Stage stage) throws Exception{
 	
