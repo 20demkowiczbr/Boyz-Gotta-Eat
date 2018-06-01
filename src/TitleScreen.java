@@ -49,13 +49,12 @@ public class TitleScreen extends Application {
 			startButton.setOnAction(new EventHandler<ActionEvent>(){
 		           public void handle(ActionEvent event) {
 		               LevelSelector map = new LevelSelector();
-		               try {
-		            	pane.getChildren().removeAll(titleNode, startButton);
-						map.start(stage);
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+						try {
+							map.start(stage);
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 		           }
 		       });
 	}
