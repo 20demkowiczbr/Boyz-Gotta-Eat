@@ -18,11 +18,18 @@ public class LevelSelector {
 		final Image map = new Image("asset/map.png");
 		final ImageView mapNode = new ImageView();
 		mapNode.setImage(map);
+		
 		Group node = new Group();
+		Scene scene = new Scene(node, 680, 480);
+		stage.setScene(scene);
+		
 		node.getChildren().addAll(mapNode);
 
 		StackPane pane = new StackPane();
-		pane.getChildren().addAll(mapNode);
+		pane.getChildren().add(node);
+		
+		//StackPane pane = new StackPane();
+		//pane.getChildren().addAll(mapNode);
 		
 		stage.show();
 		
