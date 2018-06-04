@@ -11,8 +11,22 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.*;
 
-public class ArcticWorld {
+public class ArcticWorld extends Level {
 
+	public ArcticWorld(Image bg) {
+		super(bg);
+		// TODO Auto-generated constructor stub
+	}
+
+	public void setPane() {
+		StackPane levelPane = new StackPane();
+		ImageView newBack = new ImageView();
+		newBack.setImage(getBG());
+		
+	}
+	
+	
+	/*
 public void start(Stage stage) throws Exception{
 	final Image backdrop = new Image("asset/bg.jpg");
 	final ImageView arcticNode = new ImageView();
@@ -32,4 +46,5 @@ public void start(Stage stage) throws Exception{
 	
 	stage.show();
 	}
+	*/
 }
