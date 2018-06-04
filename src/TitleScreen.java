@@ -49,15 +49,12 @@ public class TitleScreen extends Application {
 			
 			startButton.setOnAction(new EventHandler<ActionEvent>(){
 		           public void handle(ActionEvent event) {
-		               //LevelSelector map = new LevelSelector();
-							try {
-								stage.setScene(sceneChanger("asset/map.png", true));
-								
-								//map.start(stage);
-							} catch (Exception e) {
+						try {
+							stage.setScene(sceneChanger("asset/map.png", true));
+						} catch (Exception e) {
 								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+							e.printStackTrace();
+					}
 		           }
 		       });
 	}
