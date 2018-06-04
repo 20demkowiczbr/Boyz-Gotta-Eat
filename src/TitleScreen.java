@@ -49,9 +49,14 @@ public class TitleScreen extends Application {
 			
 			startButton.setOnAction(new EventHandler<ActionEvent>(){
 		           public void handle(ActionEvent event) {
-		               LevelSelector map = new LevelSelector();
+		               //LevelSelector map = new LevelSelector();
 							try {
-								map.start(stage);
+								Scene mapScene = sceneChanger("asset/map.png");
+								Button arcticButton = new Button();
+								arcticButton.setText("Go to Arctic");
+								
+								
+								//map.start(stage);
 							} catch (Exception e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -61,10 +66,14 @@ public class TitleScreen extends Application {
 	}
 	//680x480
 	
-	public static void sceneChanger(Scene newScene) {
-		Scene scene = new Scene(node, 680, 480);
-		mainStage.setScene(scene);
-		
+	public static Scene sceneChanger(String imagePath) {
+		Image newImage = new Image(imagePath);
+		ImageView newBack = new ImageView();
+		newBack.setImage(newImage);
+		StackPane newPane = new StackPane();
+		newPane.getChildren().addAll(newBack);
+		Scene scene2 = new Scene(newPane, 680, 480);
+		return scene2;
 	}
 }
 
