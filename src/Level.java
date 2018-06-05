@@ -29,4 +29,8 @@ public abstract class Level {
 		pane = levelPane;
 	}
 	
+	public StackPane getPane() {
+		return pane;
+	}
+	
 }

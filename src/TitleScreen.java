@@ -50,7 +50,7 @@ public class TitleScreen extends Application {
 			startButton.setOnAction(new EventHandler<ActionEvent>(){
 		           public void handle(ActionEvent event) {
 						try {
-							stage.setScene(sceneChanger("asset/map.png", true));
+							stage.setScene(sceneChanger(new LevelMap(new Image("asset/map.png"))));
 						} catch (Exception e) {
 								// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -60,8 +60,8 @@ public class TitleScreen extends Application {
 	}
 	//680x480
 	
-	public static Scene sceneChanger(String imagePath, boolean bool) {
-		Image newImage = new Image(imagePath);
+	public static Scene sceneChanger(Level level) {
+	/*	Image newImage = new Image(imagePath);
 		ImageView newBack = new ImageView();
 		newBack.setImage(newImage);
 		StackPane newPane = new StackPane();
@@ -73,6 +73,10 @@ public class TitleScreen extends Application {
 		}
 		Scene scene2 = new Scene(newPane, 680, 480);
 		return scene2;
+		*/
+		Level currentLevel = level;
+		Scene newScene = level.setScene();
+		return newScene;
 	}
 }
 

@@ -13,6 +13,10 @@ import javafx.scene.*;
 
 public class ArcticWorld extends Level {
 
+	public ArcticWorld() {
+		super(new Image("gorilla1.png"));
+	}
+	
 	public ArcticWorld(Image bg) {
 		super(bg);
 		// TODO Auto-generated constructor stub
