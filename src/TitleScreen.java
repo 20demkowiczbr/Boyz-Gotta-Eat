@@ -47,10 +47,22 @@ public class TitleScreen extends Application {
 			node.getChildren().add(pane);
 			stage.show();
 			
+			Level map = new LevelMap(new Image("asset/map.png"));
 			startButton.setOnAction(new EventHandler<ActionEvent>(){
 		           public void handle(ActionEvent event) {
 						try {
-							stage.setScene(sceneChanger(new LevelMap(new Image("asset/map.png"))));
+							stage.setScene(sceneChanger(map));
+						} catch (Exception e) {
+								// TODO Auto-generated catch block
+							e.printStackTrace();
+					}
+		           }
+		       });
+			
+			((LevelMap)map).getButton(0).setOnAction(new EventHandler<ActionEvent>(){
+		           public void handle(ActionEvent event) {
+						try {
+							stage.setScene(sceneChanger(new ArcticWorld(new Image("asset/bg.jpg")))); //temp image, still need that arctic backdrop Bryce...
 						} catch (Exception e) {
 								// TODO Auto-generated catch block
 							e.printStackTrace();

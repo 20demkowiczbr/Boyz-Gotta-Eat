@@ -64,14 +64,10 @@ public class LevelSelector extends Application{
 						}
 	           }
 	       });
+		
+		
+		
 		stage.show();
-	
-		
-		
-		
-		
-		
-		
 	}
 	
 
