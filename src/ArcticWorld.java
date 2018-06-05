@@ -18,11 +18,8 @@ public class ArcticWorld extends Level {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void setPane() {
-		StackPane levelPane = new StackPane();
-		ImageView newBack = new ImageView();
-		newBack.setImage(getBG());
-		
+	public Scene setScene() {
+		return super.setScene();
 	}
 	
 	
