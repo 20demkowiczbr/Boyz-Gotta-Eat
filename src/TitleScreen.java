@@ -62,7 +62,7 @@ public class TitleScreen extends Application {
 			((LevelMap)map).getButton(0).setOnAction(new EventHandler<ActionEvent>(){
 		           public void handle(ActionEvent event) {
 						try {
-							stage.setScene(sceneChanger(new ArcticWorld(new Image("asset/bg.jpg")))); //temp image, still need that arctic backdrop Bryce...
+							stage.setScene(sceneChanger(new ArcticWorld(new Image("asset/gorilla1.png")))); //temp image, still need that arctic backdrop Bryce...
 						} catch (Exception e) {
 								// TODO Auto-generated catch block
 							e.printStackTrace();
