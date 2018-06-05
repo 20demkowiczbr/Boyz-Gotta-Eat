@@ -2,29 +2,55 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 
 
 //https://stackoverflow.com/questions/29057870/in-javafx-how-do-i-move-a-sprite-across-the-screen
 
 public class Sprite {
-	private List<Image> avatar;
-	public static int count;
+	private Image avatar;
+	private ImageView imageView;
 	
-	public Sprite(Image phase1, Image phase2, Image phase3) {
-		avatar = new ArrayList<Image>();
-		avatar.add(phase1);
-		avatar.add(phase2);
-		avatar.add(phase3);
-		count = 0;
-		//random commit
-	}
+	StackPane layer;
 	
-	public Image animateWalk() {
-		if(count < avatar.size()-1)
-			count++;
-		else
-			count = 0;
+	double xVal;
+	double yVal;
+	double rVal;
+	
+	double dx;
+	double dy;
+	double dr;
+	
+	double health;
+	
+	boolean removable = false;
+	boolean canMove = true;
+	
+	double w;
+	double h;
+	
+	
+	public Sprite(StackPane pane, Image image, double x, double y, double r, double dx, double dy, double dr, double health) {
+		layer = pane;
+		avatar = image;
+		xVal = x;
+		yVal = y;
+		rVal = r;
+		this.dx = dx;
+		this.dy = dy;
+		this.dr = dr;
 		
-		return avatar.get(count);
+		this.health = health;
+		
+		imageView = new ImageView(avatar);
+		imageView.relocate(xVal, yVal);
+		imageView.setRotate(rVal);
+		
+		w = avatar.getWidth();
+		h = avatar.getHeight();
+		
+		layer.getChildren().addAll(imageView);
 	}
+	
 }
