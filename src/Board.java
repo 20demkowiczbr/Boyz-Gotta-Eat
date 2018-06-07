@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 public class Board extends JPanel{
 	
 	private URL b;
-	private Image background;
 	private ImageIcon i;
 	
 	
@@ -16,7 +15,6 @@ public class Board extends JPanel{
 		setFocusable(true);
 		b = getClass().getResource("/asset/title.png");
 		i = new ImageIcon(b);
-		background = i.getImage();
 	}
 	
 

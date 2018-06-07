@@ -1,4 +1,5 @@
 import java.awt.Button;
+import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.io.IOException;
 
@@ -28,6 +29,10 @@ public class Frame {
 		contentPane.setIcon(b.returnIcon());
 		contentPane.add(button);
 		frame.setContentPane(contentPane);
+		
+		Dimension gbc = new Dimension(200, 100);
+		
+		button.setPreferredSize(gbc);
 		
 		frame.setVisible(true);
 		
