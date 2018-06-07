@@ -1,5 +1,6 @@
 import java.awt.Button;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.io.IOException;
 
@@ -33,6 +34,7 @@ public class Frame {
 		Dimension gbc = new Dimension(200, 100);
 		
 		button.setPreferredSize(gbc);
+		button.setFont(new Font("Roboto", Font.BOLD, 40));
 		
 		frame.setVisible(true);
 		
