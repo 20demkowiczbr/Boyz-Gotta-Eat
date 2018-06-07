@@ -6,13 +6,16 @@ public class Frame {
 		
 		JFrame frame = new JFrame();
 		frame.setTitle("Platformer");
-		frame.setSize(544, 360);
-		//frame.setLayout(new GridBagLayout());
+		frame.add(new Board());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(544, 360);
+		frame.setVisible(true);
+		
+		//frame.setLayout(new GridBagLayout());
 		//frame.setLocationRelativeTo(null);
 		//frame.setResizable(false);
-		frame.setVisible(true);
-		frame.add(new Board());
+		
+		
 		
 	}
 	
