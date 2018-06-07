@@ -6,9 +6,12 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class Board extends JPanel{
+	
 	private URL b;
 	private Image background;
 	private ImageIcon i;
+	
+	
 	public Board() {
 		setFocusable(true);
 		b = getClass().getResource("/asset/title.png");

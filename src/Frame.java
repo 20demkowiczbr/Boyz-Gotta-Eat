@@ -17,7 +17,7 @@ public class Frame {
 		JFrame frame = new JFrame();
 		frame.setTitle("Platformer");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(544, 388);
+		frame.setSize(1088, 740);
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		
