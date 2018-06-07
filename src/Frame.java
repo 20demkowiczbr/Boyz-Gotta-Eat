@@ -25,8 +25,6 @@ public class Frame {
 
 		button = new Button("Click Me");
 		
-		//frame.getContentPane().add(new Board("asset\\FinalTitle.jpg"));
-		
 		frame.add(button);
 		
 		
