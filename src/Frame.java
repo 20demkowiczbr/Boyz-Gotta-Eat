@@ -3,6 +3,7 @@ import java.awt.GridBagLayout;
 import java.io.IOException;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Frame {
 	
@@ -15,19 +16,20 @@ public class Frame {
 		
 		JFrame frame = new JFrame();
 		frame.setTitle("Platformer");
-		frame.add(b);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(544, 360);
+		frame.setSize(544, 388);
 		frame.setLocationRelativeTo(null);
-		//frame.setLayout(new GridBagLayout());
 		frame.setResizable(false);
+		
+		button = new Button("Play");
+		
+		JLabel contentPane = new JLabel();
+		contentPane.setLayout(new GridBagLayout());
+		contentPane.setIcon(b.returnIcon());
+		contentPane.add(button);
+		frame.setContentPane(contentPane);
+		
 		frame.setVisible(true);
-
-		button = new Button("Click Me");
-		
-		frame.add(button);
-		
-		
 		
 	}
 	
