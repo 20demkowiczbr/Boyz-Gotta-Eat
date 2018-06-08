@@ -3,14 +3,14 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.*;
 import java.net.URL;
-
 import javax.swing.*;
 
 @SuppressWarnings("serial")
-public class Game extends JPanel
+public class Game extends JPanel implements ActionListener
 {
 	Player p;
 	private Image img;
+	Timer time;
 	private URL b;
 	private ImageIcon i;
 	
@@ -18,9 +18,12 @@ public class Game extends JPanel
 		p = new Player();
 		addKeyListener(new ActionListener());
 		setFocusable(true);
-		b = getClass().getResource(" ");
+		b = getClass().getResource("asset/background.png");
 		i = new ImageIcon(b);
 		img = i.getImage();
+		//time is in milliseconds
+		time = new Timer(5, this);
+		time.start();
 	}
 	
 	public void actionPerformed(ActionEvent e)

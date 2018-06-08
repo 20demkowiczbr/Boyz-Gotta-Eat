@@ -1,6 +1,5 @@
 import java.awt.Image;
 import java.awt.event.KeyEvent;
-import java.awt.*;
 import java.net.URL;
 
 import javax.swing.ImageIcon;
@@ -14,9 +13,11 @@ public class Player {
 	private Image img;
 		public Player()
 		{
-			b = getClass().getResource(" ");
+			b = getClass().getResource("asset/gorilla1.png");
 			i = new ImageIcon(b);
 			img = i.getImage();
+			x=10;
+			y=10;
 		}
 	
 	public void move() 
