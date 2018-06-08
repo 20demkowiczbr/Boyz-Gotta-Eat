@@ -21,7 +21,6 @@ public class Game extends JPanel implements ActionListener
 		b = getClass().getResource("asset/background.png");
 		i = new ImageIcon(b);
 		img = i.getImage();
-		//time is in milliseconds
 		time = new Timer(5, this);
 		time.start();
 	}
