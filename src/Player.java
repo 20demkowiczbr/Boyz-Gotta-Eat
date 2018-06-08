@@ -21,7 +21,6 @@ public class Player {
 			nx2=1088;
 			nx=0;
 		}
-	
 	public void move() 
 	{
 		x = x + dx;
