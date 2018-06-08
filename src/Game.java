@@ -36,9 +36,10 @@ public class Game extends JPanel implements ActionListener
 	{
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
-		if(p.getX() == 200)
+		
+		if((p.getX() - 200) % 2176 == 0)
 			p.nx = 0;
-		if(p.getX() == 1288)
+		if((p.getX() - 1288) % 2176 == 0)
 			p.nx2 = 0;
 		g2d.drawImage(img, 1088-p.nx2, 0, null);
 		if(p.getX() >= 200)

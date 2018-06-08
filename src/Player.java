@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 public class Player {
 
-	//x is coordinate of player, dx is change of x
+	//x is hor coordinate of player, dx is change of x, y is vert coordinate of player, nx and nx2 are for determining when to repeat bg
 	int x, dx, y, nx2, nx;
 	private URL b;
 	private ImageIcon i;

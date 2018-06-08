@@ -34,7 +34,6 @@ public abstract class Frame implements ActionListener
 		button.setPreferredSize(gbc);
 		button.setFont(new Font("Roboto", Font.BOLD, 40));
 		
-<<<<<<< HEAD
 		contentPane = new JLabel();
 		contentPane.setLayout(new GridBagLayout());
 		contentPane.setIcon(b.returnIcon());
@@ -51,7 +50,7 @@ public abstract class Frame implements ActionListener
 				frame.remove(contentPane);			
 			}
 		});
-=======
+		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -72,7 +71,6 @@ public abstract class Frame implements ActionListener
 		contentPane.add(button);
 		frame.setContentPane(contentPane);
 		
->>>>>>> 9eafa0a03da50a46fcab8ee1fbc717effe5d9b2f
 		frame.setVisible(true);
 		
 	}
