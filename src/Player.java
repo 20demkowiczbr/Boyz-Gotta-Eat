@@ -24,8 +24,11 @@ public class Player {
 	public void move() 
 	{
 		x = x + dx;
+		
 		nx2 = nx2 + dx;
 		nx = nx + dx;
+		
+		dx=0;
 	}
 	
 	public int getX()
@@ -49,9 +52,12 @@ public class Player {
 		
 		if(key == KeyEvent.VK_A)
 			dx = -1;
-
-		if(key == KeyEvent.VK_D)
+		else if(key == KeyEvent.VK_D)
 			dx = 1;
+		else
+			dx=0;
+		System.out.println(dx);
+
 	}
 	
 	public void keyReleased(KeyEvent e)
@@ -60,8 +66,9 @@ public class Player {
 		
 		if(key == KeyEvent.VK_A)
 			dx = 0;
-			
-		if(key == KeyEvent.VK_D)
+		if(key == KeyEvent.VK_D) 
 			dx = 0;
+		
+		
 	}
 }
