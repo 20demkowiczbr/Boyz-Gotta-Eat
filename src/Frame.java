@@ -2,33 +2,51 @@ import java.awt.Button;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Frame {
+public abstract class Frame implements ActionListener {
 	
 	private static Button button;
 	private static Board b;
+	private static JFrame frame;
+	private static JLabel contentPane;
 	
 	public static void main(String[] args) throws IOException {
 		
-		b = new Board();
+		b = new Board("/asset/title.png");
 		
-		JFrame frame = new JFrame();
+		frame = new JFrame();
 		frame.setTitle("Platformer");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1088, 740);
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		
-		button = new Button("Play");
 		Dimension gbc = new Dimension(200, 100);
+		
+		button = new Button("Play");
 		button.setPreferredSize(gbc);
 		button.setFont(new Font("Roboto", Font.BOLD, 40));
 		
-		JLabel contentPane = new JLabel();
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Board b2 = new Board("/asset/background.png");
+				frame.setTitle("Jungle");
+				frame.setSize(1088,640);
+				contentPane.setLayout(new GridBagLayout());
+				contentPane.setIcon(b2.returnIcon());
+				button.setVisible(false);
+				
+				
+			}
+		});
+		contentPane = new JLabel();
 		contentPane.setLayout(new GridBagLayout());
 		contentPane.setIcon(b.returnIcon());
 		contentPane.add(button);
