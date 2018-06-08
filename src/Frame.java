@@ -33,27 +33,28 @@ public abstract class Frame implements ActionListener {
 		button.setPreferredSize(gbc);
 		button.setFont(new Font("Roboto", Font.BOLD, 40));
 		
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Board b2 = new Board("/asset/background.png");
+				frame.setTitle("Jungle");
+				frame.setSize(1088,640);
+				frame.add(new Game());
+				contentPane.setLayout(new GridBagLayout());
+				contentPane.setIcon(b2.returnIcon());
+				button.setVisible(false);
+				
+				
+			}
+		});
 		contentPane = new JLabel();
 		contentPane.setLayout(new GridBagLayout());
 		contentPane.setIcon(b.returnIcon());
 		contentPane.add(button);
 		frame.setContentPane(contentPane);
 		
-		
-		
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				frame.setTitle("Jungle");
-				frame.setSize(1088,640);
-				frame.remove(contentPane);
-				frame.add(new Game());
-				
-				
-			}
-		});
-		
 		frame.setVisible(true);
+		
 	}
 	
 }
