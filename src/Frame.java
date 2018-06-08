@@ -20,7 +20,7 @@ public abstract class Frame implements ActionListener {
 		
 		b = new Board("/asset/title.png");
 		
-		fram = new JFrame();
+		frame = new JFrame();
 		frame.setTitle("Platformer");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1088, 740);
