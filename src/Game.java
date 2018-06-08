@@ -1,5 +1,7 @@
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 import javax.swing.*;
 
@@ -31,5 +33,15 @@ public class Game extends JPanel implements ActionListener{
 		Graphics2D g2d = (Graphics2D) g;
 	}
 	
-	
+	private class ActionListener extends KeyAdapter
+	{
+		public void keyReleased(KeyEvent e)
+		{
+				
+		}
+		public void keyPressed(KeyEvent e)
+		{
+			
+		}
+	}
 }
