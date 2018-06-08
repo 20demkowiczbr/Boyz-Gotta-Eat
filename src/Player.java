@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 public class Player {
 
 	//x is coordinate of player, dx is change of x
-	int x, dx, y, dy;
+	int x, dx, y;
 	private URL b;
 	private ImageIcon i;
 	private Image img;
