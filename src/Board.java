@@ -1,6 +1,4 @@
-import java.awt.Image;
 import java.net.URL;
-
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -9,7 +7,6 @@ public class Board extends JPanel{
 	
 	private URL b;
 	private ImageIcon i;
-	
 	
 	public Board() {
 		setFocusable(true);

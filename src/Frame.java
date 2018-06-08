@@ -24,17 +24,15 @@ public class Frame {
 		frame.setResizable(false);
 		
 		button = new Button("Play");
+		Dimension gbc = new Dimension(200, 100);
+		button.setPreferredSize(gbc);
+		button.setFont(new Font("Roboto", Font.BOLD, 40));
 		
 		JLabel contentPane = new JLabel();
 		contentPane.setLayout(new GridBagLayout());
 		contentPane.setIcon(b.returnIcon());
 		contentPane.add(button);
 		frame.setContentPane(contentPane);
-		
-		Dimension gbc = new Dimension(200, 100);
-		
-		button.setPreferredSize(gbc);
-		button.setFont(new Font("Roboto", Font.BOLD, 40));
 		
 		frame.setVisible(true);
 		
