@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 public class Player {
 
 	//x is coordinate of player, dx is change of x
-	int x, dx, y;
+	int x, dx, y, nx2, nx;
 	private URL b;
 	private ImageIcon i;
 	private Image img;
@@ -16,13 +16,17 @@ public class Player {
 			b = getClass().getResource("asset/gorilla1.png");
 			i = new ImageIcon(b);
 			img = i.getImage();
-			x=10;
-			y=10;
+			x=200;
+			y=420;
+			nx2=1088;
+			nx=0;
 		}
 	
 	public void move() 
 	{
 		x = x + dx;
+		nx2 = nx2 + dx;
+		nx = nx + dx;
 	}
 	
 	public int getX()
@@ -44,10 +48,10 @@ public class Player {
 	{
 		int key = e.getKeyCode();
 		
-		if(key == KeyEvent.VK_A);
+		if(key == KeyEvent.VK_A)
 			dx = -1;
-			
-		if(key == KeyEvent.VK_D);
+
+		if(key == KeyEvent.VK_D)
 			dx = 1;
 	}
 	
@@ -55,10 +59,10 @@ public class Player {
 	{
 		int key = e.getKeyCode();
 		
-		if(key == KeyEvent.VK_A);
+		if(key == KeyEvent.VK_A)
 			dx = 0;
 			
-		if(key == KeyEvent.VK_D);
+		if(key == KeyEvent.VK_D)
 			dx = 0;
 	}
 }

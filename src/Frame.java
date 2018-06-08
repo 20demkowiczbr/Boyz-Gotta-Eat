@@ -9,15 +9,16 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public abstract class Frame implements ActionListener {
+public abstract class Frame implements ActionListener
+{
 	
 	private static Button button;
 	private static Board b;
 	private static JFrame frame;
 	private static JLabel contentPane;
 	
-	public static void main(String[] args) throws IOException {
-		
+	public static void main(String[] args) throws IOException
+	{
 		b = new Board("/asset/title.png");
 		
 		frame = new JFrame();
@@ -39,21 +40,16 @@ public abstract class Frame implements ActionListener {
 		contentPane.add(button);
 		frame.setContentPane(contentPane);
 		
-		
-		
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
+		button.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				frame.setTitle("Jungle");
 				frame.setSize(1088,640);
-				frame.remove(contentPane);
-				frame.add(new Game());
-				
-				
+				//frame.add(new Game());
+				frame.remove(contentPane);			
 			}
 		});
-		
 		frame.setVisible(true);
 	}
-	
 }

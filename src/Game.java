@@ -14,7 +14,8 @@ public class Game extends JPanel implements ActionListener
 	private URL b;
 	private ImageIcon i;
 	
-	public Game() {
+	public Game() 
+	{
 		p = new Player();
 		addKeyListener(new ActionListener());
 		setFocusable(true);
@@ -34,10 +35,15 @@ public class Game extends JPanel implements ActionListener
 	public void paint(Graphics g)
 	{
 		super.paint(g);
-			Graphics2D g2d = (Graphics2D) g;
-		
-		g2d.drawImage(img, 0, 0, null);
-		g2d.drawImage(p.getImage(), p.getX(), p.getY(), null);
+		Graphics2D g2d = (Graphics2D) g;
+		if(p.getX() == 200)
+			p.nx = 0;
+		if(p.getX() == 1288)
+			p.nx2 = 0;
+		g2d.drawImage(img, 1088-p.nx2, 0, null);
+		if(p.getX() >= 200)
+			g2d.drawImage(img, 1088-p.nx, 0, null);
+		g2d.drawImage(p.getImage(), 200, p.getY(), null);
 	}
 	
 	private class ActionListener extends KeyAdapter
@@ -52,6 +58,3 @@ public class Game extends JPanel implements ActionListener
 		}
 	}
 }
-
-
-
