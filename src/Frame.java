@@ -39,6 +39,7 @@ public abstract class Frame implements ActionListener {
 				Board b2 = new Board("/asset/background.png");
 				frame.setTitle("Jungle");
 				frame.setSize(1088,640);
+				b2.add(new Game());
 				contentPane.setLayout(new GridBagLayout());
 				contentPane.setIcon(b2.returnIcon());
 				button.setVisible(false);

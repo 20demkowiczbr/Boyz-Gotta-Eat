@@ -9,7 +9,6 @@ public class Board extends JPanel{
 	private URL b;
 	private ImageIcon i;
 	
-	
 	public Board(String string) {
 		setFocusable(true);
 		b = getClass().getResource(string);

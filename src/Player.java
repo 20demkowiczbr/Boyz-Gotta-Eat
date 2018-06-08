@@ -1,4 +1,5 @@
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.awt.*;
 import java.net.URL;
 
@@ -38,5 +39,25 @@ public class Player {
 		return img;
 	}
 	
+	public void keyPressed(KeyEvent e)
+	{
+		int key = e.getKeyCode();
 		
+		if(key == KeyEvent.VK_A);
+			dx = -1;
+			
+		if(key == KeyEvent.VK_D);
+			dx = 1;
+	}
+	
+	public void keyReleased(KeyEvent e)
+	{
+		int key = e.getKeyCode();
+		
+		if(key == KeyEvent.VK_A);
+			dx = 0;
+			
+		if(key == KeyEvent.VK_D);
+			dx = 0;
+	}
 }
