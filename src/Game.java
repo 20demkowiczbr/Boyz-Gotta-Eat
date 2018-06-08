@@ -1,26 +1,30 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+<<<<<<< HEAD
 import java.awt.event.*;
+=======
+import java.net.URL;
+>>>>>>> 6a53f3f07e8524c669ee328cccee3ddab602ee7c
 
 import javax.swing.*;
 
 @SuppressWarnings("serial")
-public class Game extends JPanel implements ActionListener{
+public class Game extends JPanel{
 
 	Player p;
-	Image img;
+	private Image img;
+	private URL b;
+	private ImageIcon i;
 	
-	public Game() 
-	{
+	public Game() {
 		p = new Player();
 		setFocusable(true);
-		ImageIcon i = new ImageIcon("asset/background.png");
+		b = getClass().getResource(" ");
+		i = new ImageIcon(b);
 		img = i.getImage();
-		//sets timer to update player every 5 milliseconds
-		time = new Timer(5, this);
-		time.start();
 	}
+<<<<<<< HEAD
 	
 	public void actionPerformed(ActionEvent e)
 	{
@@ -45,3 +49,6 @@ public class Game extends JPanel implements ActionListener{
 		}
 	}
 }
+=======
+}
+>>>>>>> 6a53f3f07e8524c669ee328cccee3ddab602ee7c
