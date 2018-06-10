@@ -101,12 +101,12 @@ public class Game extends JPanel implements ActionListener, Runnable
 	public void jumpCycle()
 	{
 		if(maxHeight == false)
-			height--;
-		if (height == 360)
+			height = height - 3;
+		if (height == 300)
 			maxHeight = true;
 		if(maxHeight == true && height <= 420)
 		{
-			height++;
+			height = height + 3;
 			if (height == 420)
 				done = true;
 		}
