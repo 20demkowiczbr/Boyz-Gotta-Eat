@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 public class Player {
 
-	int x, dx, y, nx2, nx;
+	int x, dx, y, dy, nx2, nx;
 	private URL f;
 	private URL l;
 	private ImageIcon fi;
@@ -63,6 +63,9 @@ public class Player {
 			dx = 1;
 			imgf = fi.getImage();
 		}
+		if(key == KeyEvent.VK_W)
+			dy = 1;
+			//jump image?
 	}
 	
 	public void keyReleased(KeyEvent e)
@@ -73,7 +76,7 @@ public class Player {
 			dx = 0;
 		if(key == KeyEvent.VK_D) 
 			dx = 0;
-		
-		
+		if(key == KeyEvent.VK_W)
+			dy = 0;
 	}
 }

@@ -6,11 +6,13 @@ import java.net.URL;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
-public class Game extends JPanel implements ActionListener
+public class Game extends JPanel implements ActionListener, Runnable
 {
 	Player p;
 	private Image img;
 	Timer time;
+	Thread animator;
+	int height = 420;
 	private URL b;
 	private ImageIcon i;
 	
@@ -32,8 +34,16 @@ public class Game extends JPanel implements ActionListener
 		repaint();
 	}
 	
+	boolean k = false;
+	
 	public void paint(Graphics g)
 	{
+		if (p.dy == 1 & k == false)
+		{
+			k = true;
+			animator = new Thread(this);
+			animator.start();
+		}
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
 		
@@ -44,7 +54,7 @@ public class Game extends JPanel implements ActionListener
 		g2d.drawImage(img, 1088-p.nx2, 0, null);
 		if(p.getX() >= 200)
 			g2d.drawImage(img, 1088-p.nx, 0, null);
-		g2d.drawImage(p.getImage(), 200, p.getY(), null);
+		g2d.drawImage(p.getImage(), 200, height, null);
 	}
 	
 	private class ActionListener extends KeyAdapter
@@ -56,6 +66,49 @@ public class Game extends JPanel implements ActionListener
 		public void keyPressed(KeyEvent e)
 		{
 			p.keyPressed(e);
+		}
+	}
+
+	@Override
+	public void run()
+	{
+		long beforeTime, timeDiff, sleep;
+		beforeTime = System.currentTimeMillis();
+		while(done == false)
+		{
+			jumpCycle();
+			timeDiff = System.currentTimeMillis() - beforeTime;
+			sleep = 10 - timeDiff;
+			if(sleep < 0)
+				sleep = 2;
+			try 
+			{
+				Thread.sleep(sleep);
+			} 
+			catch(Exception e ) 
+			{}
+			beforeTime = System.currentTimeMillis();
+		}
+		done = false;
+		maxHeight = false;
+		k = false;
+		
+	}
+	
+	boolean maxHeight = false;
+	boolean done = false;
+	
+	public void jumpCycle()
+	{
+		if(maxHeight == false)
+			height--;
+		if (height == 360)
+			maxHeight = true;
+		if(maxHeight == true && height <= 420)
+		{
+			height++;
+			if (height == 420)
+				done = true;
 		}
 	}
 }
