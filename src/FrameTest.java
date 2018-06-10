@@ -2,6 +2,11 @@ import javax.swing.*;
 
 public class FrameTest {
 
+	public static void main(String[] args)
+	{
+		new FrameTest();
+	}
+	
 	public FrameTest() 
 	{
 		JFrame frame = new JFrame("danky kang");
@@ -11,10 +16,5 @@ public class FrameTest {
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
 
-	}
-	
-	public static void main(String[] args)
-	{
-		new FrameTest();
 	}
 }

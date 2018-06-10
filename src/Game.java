@@ -51,7 +51,7 @@ public class Game extends JPanel implements ActionListener
 	{
 		public void keyReleased(KeyEvent e)
 		{
-			p.keyPressed(e);	
+			p.keyReleased(e);	
 		}
 		public void keyPressed(KeyEvent e)
 		{

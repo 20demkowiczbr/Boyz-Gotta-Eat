@@ -23,12 +23,9 @@ public class Player {
 		}
 	public void move() 
 	{
-		x = x + dx;
-		
+		x = x + (50*dx);
 		nx2 = nx2 + dx;
 		nx = nx + dx;
-		
-		dx=0;
 	}
 	
 	public int getX()
