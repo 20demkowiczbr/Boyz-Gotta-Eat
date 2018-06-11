@@ -44,6 +44,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 			animator = new Thread(this);
 			animator.start();
 		}
+		
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
 		
@@ -54,7 +55,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 		g2d.drawImage(img, 1088-p.nx2, 0, null);
 		if(p.getX() >= 200)
 			g2d.drawImage(img, 1088-p.nx, 0, null);
-		g2d.drawImage(p.getImage(), 200, height, null);
+		
+		g2d.drawImage(p.getImage(), p.left, height, null);
 	}
 	
 	private class ActionListener extends KeyAdapter
@@ -106,7 +108,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 			maxHeight = true;
 		if(maxHeight == true && height <= 420)
 		{
-			height = height + 3;
+			height = height + 2;
 			if (height == 420)
 				done = true;
 		}

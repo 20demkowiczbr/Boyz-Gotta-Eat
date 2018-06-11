@@ -15,6 +15,5 @@ public class FrameTest {
 		frame.setSize(1088,640);
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
-
 	}
 }
