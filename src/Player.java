@@ -11,11 +11,12 @@ public class Player {
 	private URL l;
 	private URL w;
 	private URL wl;
+	
 	private ImageIcon fi;
 	private ImageIcon li;
 	private ImageIcon wi;
 	private ImageIcon wli;
-
+	
 	private Image img;
 	
 	public Player()
@@ -96,38 +97,6 @@ public class Player {
 			dy = 1;
 	}
 	
-	boolean yeet = false;
-	
-	public void walkAnimF()
-	{
-		if(yeet == false)
-		{
-			img = fi.getImage();
-			yeet = true;
-		}
-		else
-		{
-			img = wi.getImage();
-			yeet = false;
-		}
-	}
-	
-	public void walkAnimL()
-	{
-		if(yeet == false)
-		{
-			img = li.getImage();
-			yeet = true;
-		}
-		else
-		{
-			img = wli.getImage();
-			yeet = false;
-		}
-
-	}
-	
-	
 	public void keyReleased(KeyEvent e)
 	{
 		int key = e.getKeyCode();
@@ -138,5 +107,45 @@ public class Player {
 			dx = 0;
 		if(key == KeyEvent.VK_W)
 			dy = 0;
+	}
+	
+	boolean yeet = false;
+	int count = 0;
+	
+	public void walkAnimF()
+	{
+		if(yeet == false)
+		{
+			img = fi.getImage();
+			count++;
+			if(count % 5 == 0)
+				yeet = true;
+		}
+		else
+		{
+			img = wi.getImage();
+			count++;
+			if(count % 5 == 0)
+				yeet = false;
+		}
+	}
+	
+	public void walkAnimL()
+	{
+		if(yeet == false)
+		{
+			img = li.getImage();
+			count++;
+			if(count % 5 == 0)
+				yeet = true;
+		}
+		else
+		{
+			img = wli.getImage();
+			count++;
+			if(count % 5 == 0)
+				yeet = false;
+		}
+
 	}
 }
