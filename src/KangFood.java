@@ -1,20 +1,22 @@
-import java.awt.*;
+
+
+import java.awt.Image;
 import java.net.URL;
 
 import javax.swing.ImageIcon;
 
-public class Heart {
+public class KangFood {
 
 	int x;
 	private URL i;
 	private ImageIcon icon;
 	private Image img;
 	
-	public Heart(int num) {
+	public KangFood(int num) {
 		x = num;
-		i = getClass().getResource("asset/PixelHeart.jpg");
+		i = getClass().getResource("asset/PixelBananaFinal.png");
 		icon = new ImageIcon(i);
-		img = icon.getImage().getScaledInstance(25,25,Image.SCALE_DEFAULT);
+		img = icon.getImage().getScaledInstance(40,40,Image.SCALE_DEFAULT);
 	}
 	
 	public void delete() {
@@ -25,6 +27,10 @@ public class Heart {
 		return x;
 	}
 	
+	public void subtractX()
+	{
+		x = x-1;
+	}
 	
 	public Image getImage()
 	{

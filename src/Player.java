@@ -27,6 +27,11 @@ public class Player {
 	Heart h2;
 	Heart h3;
 	
+	KangFood k1;
+	KangFood k2;
+	KangFood k3;
+	KangFood k4;
+	
 	int health;
 	
 	public Player()
@@ -60,6 +65,11 @@ public class Player {
 		h1 = new Heart(0);
 		h2 = new Heart(30);
 		h3 = new Heart(60);
+		
+		k1 = new KangFood(700);
+		k2 = new KangFood(1300);
+		k3 = new KangFood(2000);
+		k4 = new KangFood(2500);
 		}
 		
 	public void move() 
@@ -72,6 +82,10 @@ public class Player {
 			{
 				en.subtractX();
 				en2.subtractX();
+				k1.subtractX();
+				k2.subtractX();
+				k3.subtractX();
+				k4.subtractX();
 				x = x + dx;
 				nx2 = nx2 + dx;
 				nx = nx + dx;
