@@ -23,9 +23,13 @@ public class Player {
 	Enemy en;
 	Enemy en2;
 	
+	int health;
+	
 	public Player()
 	{
 		left = 200;
+		
+		health = 3;
 		
 		f = getClass().getResource("asset/gorilla1.png");
 		fi = new ImageIcon(f);
@@ -94,6 +98,11 @@ public class Player {
 	
 	public Enemy returnEnemy2() {
 		return en2;
+	}
+	
+	public int returnScore()
+	{
+		return x - 200;
 	}
 	
 	public void keyPressed(KeyEvent e)

@@ -39,9 +39,13 @@ public class Game extends JPanel implements ActionListener, Runnable
 		p.move();
 		if (en.getBounds().intersects(getBound())) {
 			en.delete();
+			p.health--;
+			System.out.println(p.health);
 		}
 		if (en2.getBounds().intersects(getBound())) {
 			en2.delete();
+			p.health--;
+			System.out.println(p.health);
 		}
 			
 		repaint();
