@@ -160,12 +160,12 @@ public class Player {
 	}
 	
 	public Rectangle getBounds() {
-		Rectangle r = new Rectangle (getX(), getY(), 130, 140);
+		Rectangle r = new Rectangle (left, y, 130, 140);
 		return r;
 	}
 	
-	/*public Rectangle getEnBounds() {
+	public Rectangle getEnBounds() {
 		Rectangle r = new Rectangle (en.getX(), 490, 70, 70);
 		return r;
-	}*/
+	}
 }
