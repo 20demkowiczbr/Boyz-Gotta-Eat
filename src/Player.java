@@ -1,4 +1,5 @@
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 
@@ -147,5 +148,10 @@ public class Player {
 				yeet = false;
 		}
 
+	}
+	
+	public Rectangle getBounds() {
+		Rectangle r = new Rectangle (getX(), getY(), 130, 140);
+		return r;
 	}
 }

@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Shape;
 import java.awt.event.*;
 import java.net.URL;
 import javax.swing.*;
@@ -33,6 +34,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 	public void actionPerformed(ActionEvent e)
 	{
 		p.move();
+		//if (((Shape) e).getBounds().intersects(p.getBounds()))
+			//System.out.println("hi");
 		repaint();
 	}
 	
@@ -60,7 +63,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 		
 		g2d.drawImage(p.getImage(), p.left, height, null);
 		
-		g2d.drawImage(e.getImage(), 1000- p.left, 454, null);
+		g2d.drawImage(e.getImage(), 1300, 454, null);
 		/*
 		 * To do:
 		 *in order to get enemy to stay in its place, need a variable like "left"

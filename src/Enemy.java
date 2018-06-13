@@ -29,4 +29,9 @@ public class Enemy {
 	{
 		return img;
 	}
+	
+	public Rectangle getBounds() {
+		Rectangle r = new Rectangle (getX(), 454, 102, 106);
+		return r;
+	}
 }
