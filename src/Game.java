@@ -21,7 +21,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 	public Game() 
 	{
 		p = new Player();
-		en = new Enemy();
+		en = p.returnEnemy();
 		addKeyListener(new ActionListener());
 		setFocusable(true);
 		b = getClass().getResource("asset/background.png");
@@ -52,8 +52,6 @@ public class Game extends JPanel implements ActionListener, Runnable
 		
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
-		
-		en.subtractX();
 
 		if((p.getX() - 200) % 2176 == 0)
 			p.nx = 0;
@@ -65,7 +63,9 @@ public class Game extends JPanel implements ActionListener, Runnable
 		
 		g2d.drawImage(p.getImage(), p.left, height, null);
 		
-		g2d.drawImage(en.getImage(), en.getX() , 454, null);
+		g2d.drawImage(en.getImage(), en.getX() , 490, null);
+	
+		
 		/*
 		 * To do:
 		 *in order to get enemy to stay in its place, need a variable like "left"
@@ -117,8 +117,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 	public void jumpCycle()
 	{
 		if(maxHeight == false)
-			height = height - 3;
-		if (height == 300)
+			height = height - 2;
+		if (height ==240)
 			maxHeight = true;
 		if(maxHeight == true && height <= 420)
 		{

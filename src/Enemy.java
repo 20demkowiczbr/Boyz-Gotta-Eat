@@ -17,7 +17,7 @@ public class Enemy {
 		
 		i = getClass().getResource("asset/penguin128.png");
 		icon = new ImageIcon(i);
-		img = icon.getImage();
+		img = icon.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT);
 	}
 	
 	public int getX()

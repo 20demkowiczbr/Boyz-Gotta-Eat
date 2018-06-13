@@ -20,6 +20,8 @@ public class Player {
 	
 	private Image img;
 	
+	Enemy en;
+	
 	public Player()
 	{
 		left = 200;
@@ -42,6 +44,8 @@ public class Player {
 		y=420;
 		nx2=1088;
 		nx=0;
+		
+		en = new Enemy();
 		}
 		
 	public void move() 
@@ -52,6 +56,7 @@ public class Player {
 				left = left + dx;
 			else 
 			{
+				en.subtractX();
 				x = x + dx;
 				nx2 = nx2 + dx;
 				nx = nx + dx;
@@ -79,6 +84,11 @@ public class Player {
 		return img;
 	}
 	
+	public Enemy returnEnemy()
+	{
+		return en;
+	}
+	
 	public void keyPressed(KeyEvent e)
 	{
 		int key = e.getKeyCode();
@@ -92,7 +102,6 @@ public class Player {
 		{
 			dx = 1;
 			walkAnimF();
-
 		}
 		if(key == KeyEvent.VK_W)
 			dy = 1;
