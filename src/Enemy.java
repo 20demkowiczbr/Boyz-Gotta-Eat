@@ -30,6 +30,11 @@ public class Enemy {
 		return img;
 	}
 	
+	public void subtractX()
+	{
+		x = x-1;
+	}
+	
 	public Rectangle getBounds() {
 		Rectangle r = new Rectangle (getX(), 454, 102, 106);
 		return r;
