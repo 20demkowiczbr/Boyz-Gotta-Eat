@@ -9,6 +9,7 @@ import javax.swing.*;
 public class Game extends JPanel implements ActionListener, Runnable
 {
 	Player p;
+	Enemy e;
 	private Image img;
 	Timer time;
 	Thread animator;
@@ -19,6 +20,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 	public Game() 
 	{
 		p = new Player();
+		e = new Enemy();
 		addKeyListener(new ActionListener());
 		setFocusable(true);
 		b = getClass().getResource("asset/background.png");
@@ -57,6 +59,13 @@ public class Game extends JPanel implements ActionListener, Runnable
 			g2d.drawImage(img, 1088-p.nx, 0, null);
 		
 		g2d.drawImage(p.getImage(), p.left, height, null);
+		
+		g2d.drawImage(e.getImage(), e.getX(), 454, null);
+		/*
+		 * To do:
+		 *in order to get enemy to stay in its place, need a variable like "left"
+		 *for Player that changes as screen goes by. As is, the enemy is always at x=1000
+		 */
 	}
 	
 	private class ActionListener extends KeyAdapter
