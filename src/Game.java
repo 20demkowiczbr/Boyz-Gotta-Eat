@@ -34,8 +34,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 	public void actionPerformed(ActionEvent e)
 	{
 		p.move();
-		//if (((Shape) e).getBounds().intersects(p.getBounds()))
-			//System.out.println("hi");
+		if (en.getBounds().intersects(p.getBounds()))
+			System.out.println("hi");
 		repaint();
 	}
 	
