@@ -35,7 +35,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 	{
 		p.move();
 		if (en.getBounds().intersects(p.getBounds()))
-			System.out.println("hi");
+			System.out.println("hi" + en.getX());
 		repaint();
 	}
 	
@@ -63,7 +63,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 		
 		g2d.drawImage(p.getImage(), p.left, height, null);
 		
-		g2d.drawImage(en.getImage(), en.getX() , 490, null);
+		g2d.drawImage(en.getImage(), en.getX() , 490 , null);
 	
 		
 		/*

@@ -163,4 +163,9 @@ public class Player {
 		Rectangle r = new Rectangle (getX(), getY(), 130, 140);
 		return r;
 	}
+	
+	/*public Rectangle getEnBounds() {
+		Rectangle r = new Rectangle (en.getX(), 490, 70, 70);
+		return r;
+	}*/
 }

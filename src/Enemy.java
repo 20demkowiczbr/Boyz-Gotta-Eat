@@ -36,7 +36,7 @@ public class Enemy {
 	}
 	
 	public Rectangle getBounds() {
-		Rectangle r = new Rectangle (getX(), 454, 102, 106);
+		Rectangle r = new Rectangle (x, 490, 70, 70);
 		return r;
 	}
 }
