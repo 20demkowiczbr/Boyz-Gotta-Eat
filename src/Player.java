@@ -21,6 +21,7 @@ public class Player {
 	private Image img;
 	
 	Enemy en;
+	Enemy en2;
 	
 	public Player()
 	{
@@ -45,7 +46,8 @@ public class Player {
 		nx2=1088;
 		nx=0;
 		
-		en = new Enemy();
+		en = new Enemy(1300);
+		en2 = new Enemy(2000);
 		}
 		
 	public void move() 
@@ -57,6 +59,7 @@ public class Player {
 			else 
 			{
 				en.subtractX();
+				en2.subtractX();
 				x = x + dx;
 				nx2 = nx2 + dx;
 				nx = nx + dx;
@@ -87,6 +90,10 @@ public class Player {
 	public Enemy returnEnemy()
 	{
 		return en;
+	}
+	
+	public Enemy returnEnemy2() {
+		return en2;
 	}
 	
 	public void keyPressed(KeyEvent e)
@@ -164,8 +171,4 @@ public class Player {
 		return r;
 	}
 	
-	public Rectangle getEnBounds() {
-		Rectangle r = new Rectangle (en.getX(), 490, 70, 70);
-		return r;
-	}
 }

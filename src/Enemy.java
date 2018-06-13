@@ -11,13 +11,13 @@ public class Enemy {
 	private ImageIcon icon;
 	private Image img;
 	
-	public Enemy()
+	public Enemy(int num)
 	{
-		x = 500;
-		
+		x = num;
 		i = getClass().getResource("asset/penguin128.png");
 		icon = new ImageIcon(i);
-		img = icon.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT);
+		img = icon.getImage().getScaledInstance(50,50,Image.SCALE_DEFAULT);
+		
 	}
 	
 	public int getX()
@@ -35,8 +35,12 @@ public class Enemy {
 		x = x-1;
 	}
 	
+	public void delete() {
+		x = -1300;
+	}
+	
 	public Rectangle getBounds() {
-		Rectangle r = new Rectangle (x, 490, 70, 70);
+		Rectangle r = new Rectangle (x, 510, 50, 50);
 		return r;
 	}
 }

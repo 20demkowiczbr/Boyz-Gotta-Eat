@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.event.*;
 import java.net.URL;
@@ -11,6 +12,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 {
 	Player p;
 	Enemy en;
+	Enemy en2;
 	private Image img;
 	Timer time;
 	Thread animator;
@@ -22,6 +24,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 	{
 		p = new Player();
 		en = p.returnEnemy();
+		en2 = p.returnEnemy2();
 		addKeyListener(new ActionListener());
 		setFocusable(true);
 		b = getClass().getResource("asset/background.png");
@@ -34,8 +37,13 @@ public class Game extends JPanel implements ActionListener, Runnable
 	public void actionPerformed(ActionEvent e)
 	{
 		p.move();
-		if (en.getBounds().intersects(p.getBounds()))
-			System.out.println("hi" + en.getX());
+		if (en.getBounds().intersects(getBound())) {
+			en.delete();
+		}
+		if (en2.getBounds().intersects(getBound())) {
+			en2.delete();
+		}
+			
 		repaint();
 	}
 	
@@ -63,14 +71,10 @@ public class Game extends JPanel implements ActionListener, Runnable
 		
 		g2d.drawImage(p.getImage(), p.left, height, null);
 		
-		g2d.drawImage(en.getImage(), en.getX() , 490 , null);
-	
+		g2d.drawImage(en.getImage(), en.getX() , 510 , null);
 		
-		/*
-		 * To do:
-		 *in order to get enemy to stay in its place, need a variable like "left"
-		 *for Player that changes as screen goes by. As is, the enemy is always at x=1000
-		 */
+		g2d.drawImage(en2.getImage(), en2.getX(), 510, null);
+	
 	}
 	
 	private class ActionListener extends KeyAdapter
@@ -126,5 +130,10 @@ public class Game extends JPanel implements ActionListener, Runnable
 			if (height == 420)
 				done = true;
 		}
+	}
+	
+	public Rectangle getBound() {
+		Rectangle r = new Rectangle (p.left, height, 130, 140);
+		return r;
 	}
 }
