@@ -23,6 +23,10 @@ public class Player {
 	Enemy en;
 	Enemy en2;
 	
+	Heart h1;
+	Heart h2;
+	Heart h3;
+	
 	int health;
 	
 	public Player()
@@ -52,6 +56,10 @@ public class Player {
 		
 		en = new Enemy(1300);
 		en2 = new Enemy(2000);
+		
+		h1 = new Heart(0);
+		h2 = new Heart(30);
+		h3 = new Heart(60);
 		}
 		
 	public void move() 
@@ -98,6 +106,18 @@ public class Player {
 	
 	public Enemy returnEnemy2() {
 		return en2;
+	}
+	
+	public Heart returnHeart1() {
+		return h1;
+	}
+	
+	public Heart returnHeart2() {
+		return h2;
+	}
+
+	public Heart returnHeart3() {
+		return h3;
 	}
 	
 	public int returnScore()

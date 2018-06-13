@@ -13,6 +13,12 @@ public class Game extends JPanel implements ActionListener, Runnable
 	Player p;
 	Enemy en;
 	Enemy en2;
+	Heart h1;
+	Heart h2;
+	Heart h3;
+	
+	int count = 4;
+	
 	private Image img;
 	Timer time;
 	Thread animator;
@@ -25,6 +31,10 @@ public class Game extends JPanel implements ActionListener, Runnable
 		p = new Player();
 		en = p.returnEnemy();
 		en2 = p.returnEnemy2();
+		h1 = p.returnHeart1();
+		h2 = p.returnHeart2();
+		h3 = p.returnHeart3();
+		
 		addKeyListener(new ActionListener());
 		setFocusable(true);
 		b = getClass().getResource("asset/background.png");
@@ -39,13 +49,23 @@ public class Game extends JPanel implements ActionListener, Runnable
 		p.move();
 		if (en.getBounds().intersects(getBound())) {
 			en.delete();
-			p.health--;
-			System.out.println(p.health);
+			count--;
+			if (count == 3)
+				h3.delete();
+			else if(count == 2)
+				h2.delete();
+			else if(count == 1)
+				h1.delete();
 		}
 		if (en2.getBounds().intersects(getBound())) {
 			en2.delete();
-			p.health--;
-			System.out.println(p.health);
+			count--;
+			if (count == 3)
+				h3.delete();
+			else if(count == 2)
+				h2.delete();
+			else if(count == 1)
+				h1.delete();
 		}
 			
 		repaint();
@@ -78,6 +98,12 @@ public class Game extends JPanel implements ActionListener, Runnable
 		g2d.drawImage(en.getImage(), en.getX() , 510 , null);
 		
 		g2d.drawImage(en2.getImage(), en2.getX(), 510, null);
+		
+		g2d.drawImage(h1.getImage(), h1.getX(), 0, null);
+		
+		g2d.drawImage(h2.getImage(), h2.getX(), 0, null);
+		
+		g2d.drawImage(h3.getImage(), h3.getX(), 0, null);
 	
 	}
 	
