@@ -17,6 +17,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 	
 	Enemy en;
 	Enemy en2;
+	Enemy en3;
 	
 	Heart h1;
 	Heart h2;
@@ -42,6 +43,7 @@ public class Game extends JPanel implements ActionListener, Runnable
 		
 		en = p.returnEnemy();
 		en2 = p.returnEnemy2();
+		en3 = p.returnEnemy3();
 		
 		h1 = p.returnHeart1();
 		h2 = p.returnHeart2();
@@ -84,22 +86,28 @@ public class Game extends JPanel implements ActionListener, Runnable
 			else if(count == 1)
 				h1.delete();
 		}
-		
+		if (en3.getBounds().intersects(getBound())) {
+			en3.delete();
+			count--;
+			if (count == 3)
+				h3.delete();
+			else if(count == 2)
+				h2.delete();
+			else if(count == 1)
+				h1.delete();
+		}
 		if (k1.getBounds().intersects(getBound()))	{
 			k1.delete();
 			score++;
 		}
-		
 		if (k2.getBounds().intersects(getBound()))	{
 			k2.delete();
 			score++;
 		}
-		
 		if (k3.getBounds().intersects(getBound()))	{
 			k3.delete();
 			score++;
 		}
-		
 		if (k4.getBounds().intersects(getBound()))	{
 			k4.delete();
 			score++;
@@ -134,6 +142,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 		g2d.drawImage(en.getImage(), en.getX() , 510 , null);
 		
 		g2d.drawImage(en2.getImage(), en2.getX(), 510, null);
+		
+		g2d.drawImage(en3.getImage(), en3.getX(), 510, null);
 		
 		g2d.drawImage(h1.getImage(), h1.getX(), 0, null);
 		

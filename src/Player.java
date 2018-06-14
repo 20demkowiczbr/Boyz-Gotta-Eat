@@ -22,6 +22,7 @@ public class Player {
 	
 	Enemy en;
 	Enemy en2;
+	Enemy en3;
 	
 	Heart h1;
 	Heart h2;
@@ -61,6 +62,7 @@ public class Player {
 		
 		en = new Enemy(1300);
 		en2 = new Enemy(2000);
+		en3 = new Enemy(2500);
 		
 		h1 = new Heart(0);
 		h2 = new Heart(45);
@@ -82,6 +84,7 @@ public class Player {
 			{
 				en.subtractX();
 				en2.subtractX();
+				en3.subtractX();
 				k1.subtractX();
 				k2.subtractX();
 				k3.subtractX();
@@ -120,6 +123,10 @@ public class Player {
 	
 	public Enemy returnEnemy2() {
 		return en2;
+	}
+	
+	public Enemy returnEnemy3() {
+		return en3;
 	}
 	
 	public Heart returnHeart1() {
