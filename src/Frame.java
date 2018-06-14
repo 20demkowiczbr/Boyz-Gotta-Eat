@@ -4,10 +4,22 @@ import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
 
 public abstract class Frame implements ActionListener
 {
@@ -20,6 +32,8 @@ public abstract class Frame implements ActionListener
 	public static void main(String[] args) throws IOException
 	{
 		b = new Board("/asset/title.png");
+		
+		File monkeyNoise = new File("MonkeyNoise.wav");
 		
 		frame = new JFrame();
 		frame.setTitle("Platformer");
@@ -46,25 +60,18 @@ public abstract class Frame implements ActionListener
 			{
 				frame.setVisible(false);
 				FrameTest f = new FrameTest();
+				try {
+					playSound(AudioSystem.getAudioInputStream(new File("C:\\Users\\K-$izzle\\git\\tbdTitle\\src\\asset\\MonkeyNoise.wav")));
+				} catch (UnsupportedAudioFileException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		
-		button.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				
-				Board b2 = new Board("/asset/background.png");
-				frame.setTitle("Jungle");
-				frame.setSize(1088,640);
-				frame.add(new Game());
-				contentPane.setLayout(new GridBagLayout());
-				contentPane.setIcon(b2.returnIcon());
-				button.setVisible(false);
-				
-				
-			}
-		});
 		contentPane = new JLabel();
 		contentPane.setLayout(new GridBagLayout());
 		contentPane.setIcon(b.returnIcon());
@@ -75,5 +82,17 @@ public abstract class Frame implements ActionListener
 		
 		frame.setVisible(true);
 		
+		
+	}
+	
+	public static void playSound(AudioInputStream audioInputStream)
+	{
+		try {
+			Clip clip = AudioSystem.getClip();
+			clip.open(audioInputStream);
+			clip.start();
+		}catch (Exception e) {
+			
+		}
 	}
 }

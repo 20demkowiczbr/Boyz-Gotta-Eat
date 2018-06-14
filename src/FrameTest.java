@@ -13,9 +13,7 @@ import sun.audio.ContinuousAudioDataStream;
 public class FrameTest {
 
 	private static URL M;
-	private static String L;
-
-
+	
 	public FrameTest() 
 	{
 		M = getClass().getResource("asset/Monkey Noise.wav");
