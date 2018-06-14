@@ -15,7 +15,7 @@ public class KangFood {
 	
 	public KangFood(int num) {
 		x = num;
-		i = getClass().getResource("asset/PixelBananaFinal.png");
+		i = getClass().getResource("asset/banana.png");
 		icon = new ImageIcon(i);
 		img = icon.getImage().getScaledInstance(80,80,Image.SCALE_DEFAULT);
 	}

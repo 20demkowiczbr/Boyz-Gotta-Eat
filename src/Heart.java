@@ -12,7 +12,7 @@ public class Heart {
 	
 	public Heart(int num) {
 		x = num;
-		i = getClass().getResource("asset/PixelHeart.jpg");
+		i = getClass().getResource("asset/PixelHeart.png");
 		icon = new ImageIcon(i);
 		img = icon.getImage().getScaledInstance(25,25,Image.SCALE_DEFAULT);
 	}
