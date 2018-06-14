@@ -88,7 +88,7 @@ public class Player
 		k6 = new KangFood(3400);
 		k7 = new KangFood(3800);
 		k8 = new KangFood(4200);
-		}
+	}
 		
 	public void move() 
 	{
@@ -232,7 +232,8 @@ public class Player
 		return x - 200;
 	}
 	
-	public void noMove() {
+	public void noMove() 
+	{
 		dx = 0;
 		dy = 0;
 	}
@@ -307,12 +308,11 @@ public class Player
 			if(count % 5 == 0)
 				yeet = false;
 		}
-
 	}
 	
-	public Rectangle getBounds() {
+	public Rectangle getBounds() 
+	{
 		Rectangle r = new Rectangle (left, y, 130, 140);
 		return r;
 	}
-	
 }

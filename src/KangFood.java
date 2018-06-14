@@ -6,25 +6,28 @@ import java.net.URL;
 
 import javax.swing.ImageIcon;
 
-public class KangFood {
-
+public class KangFood 
+{
 	int x;
 	private URL i;
 	private ImageIcon icon;
 	private Image img;
 	
-	public KangFood(int num) {
+	public KangFood(int num)
+	{
 		x = num;
 		i = getClass().getResource("asset/banana.png");
 		icon = new ImageIcon(i);
 		img = icon.getImage().getScaledInstance(40,40,Image.SCALE_DEFAULT);
 	}
 	
-	public void delete() {
+	public void delete() 
+	{
 		x = -2000;
 	}
 	
-	public int getX() {
+	public int getX()
+	{
 		return x;
 	}
 	
@@ -38,9 +41,9 @@ public class KangFood {
 		return img;
 	}
 	
-	public Rectangle getBounds() {
+	public Rectangle getBounds() 
+	{
 		Rectangle r = new Rectangle (x, 350, 40, 40);
 		return r;
 	}
-	
 }

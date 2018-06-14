@@ -1,16 +1,12 @@
-
-
 import java.awt.Font;
 import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class FinalScreen {
-	
+public class FinalScreen 
+{
 	JLabel contentPane;
 	
 	public FinalScreen(int num) 
@@ -26,7 +22,5 @@ public class FinalScreen {
 		contentPane.setFont(new Font("Roboto", Font.BOLD, 40));
 		contentPane.setLayout(new GridBagLayout());
 		frame.setContentPane(contentPane);
-		
-		
 	}
 }

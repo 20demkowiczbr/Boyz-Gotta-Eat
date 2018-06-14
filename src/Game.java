@@ -10,33 +10,17 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class Game extends JPanel implements ActionListener, Runnable
 {
-	
 	int breakCount = 0;
 	
 	int score = 0;
 	
 	Player p;
 	
-	Enemy en;
-	Enemy en2;
-	Enemy en3;
-	Enemy en4;
-	Enemy en5;
-	Enemy en6;
-	Enemy en7;
+	Enemy en, en2, en3, en4, en5, en6, en7;	
 	
-	Heart h1;
-	Heart h2;
-	Heart h3;
-	
-	KangFood k1;
-	KangFood k2;
-	KangFood k3;
-	KangFood k4;
-	KangFood k5;
-	KangFood k6;
-	KangFood k7;
-	KangFood k8;
+	Heart h1, h2, h3;
+
+	KangFood k1, k2, k3, k4, k5, k6, k7, k8;
 	
 	int count = 4;
 	
@@ -84,12 +68,11 @@ public class Game extends JPanel implements ActionListener, Runnable
 	public void actionPerformed(ActionEvent e)
 	{
 		p.move();
-		if((p.getX() > 4400) && breakCount == 0) {
-			
+		if((p.getX() > 4400) && breakCount == 0) 
+		{
 			WinScreen win = new WinScreen(p.returnDist() + score + (count*100));
 			p.noMove();
 			breakCount++;
-			
 		}
 		if (en.getBounds().intersects(getBound())) 
 		{
@@ -99,7 +82,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h3.delete();
 			else if(count == 2)
 				h2.delete();
-			else if(count == 1) {
+			else if(count == 1)
+			{
 				h1.delete();
 				p.noMove();
 				FinalScreen s = new FinalScreen(p.returnDist() + score + (count*100));
@@ -113,7 +97,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h3.delete();
 			else if(count == 2)
 				h2.delete();
-			else if(count == 1) {
+			else if(count == 1) 
+			{
 				h1.delete();
 				p.noMove();
 				FinalScreen s = new FinalScreen(p.returnDist() + score + (count*100));
@@ -127,7 +112,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h3.delete();
 			else if(count == 2)
 				h2.delete();
-			else if(count == 1) {
+			else if(count == 1)
+			{
 				h1.delete();
 				p.noMove();
 				FinalScreen s = new FinalScreen(p.returnDist() + score + (count*100));
@@ -141,7 +127,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h3.delete();
 			else if(count == 2)
 				h2.delete();
-			else if(count == 1) {
+			else if(count == 1)
+			{
 				h1.delete();
 				p.noMove();
 				FinalScreen s = new FinalScreen(p.returnDist() + score + (count*100));
@@ -155,7 +142,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h3.delete();
 			else if(count == 2)
 				h2.delete();
-			else if(count == 1) {
+			else if(count == 1) 
+			{
 				h1.delete();
 				p.noMove();
 				FinalScreen s = new FinalScreen(p.returnDist() + score + (count*100));
@@ -169,7 +157,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h3.delete();
 			else if(count == 2)
 				h2.delete();
-			else if(count == 1) {
+			else if(count == 1)
+			{
 				h1.delete();
 				p.noMove();
 				FinalScreen s = new FinalScreen(p.returnDist() + score + (count*100));
@@ -183,7 +172,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h3.delete();
 			else if(count == 2)
 				h2.delete();
-			else if(count == 1) {
+			else if(count == 1)
+			{
 				h1.delete();
 				p.noMove();
 				FinalScreen s = new FinalScreen(p.returnDist() + score + (count*100));
@@ -198,13 +188,11 @@ public class Game extends JPanel implements ActionListener, Runnable
 		{
 			k2.delete();
 			score = score + 400;
-
 		}
 		if (k3.getBounds().intersects(getBound()))
 		{
 			k3.delete();
 			score = score + 400;
-
 		}
 		if (k4.getBounds().intersects(getBound()))
 		{
@@ -331,7 +319,6 @@ public class Game extends JPanel implements ActionListener, Runnable
 		done = false;
 		maxHeight = false;
 		k = false;
-		
 	}
 	
 	boolean maxHeight = false;

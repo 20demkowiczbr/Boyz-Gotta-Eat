@@ -5,8 +5,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class WinScreen {
-	
+public class WinScreen 
+{
+
 	JLabel contentPane;
 	
 	public WinScreen(int num) 
@@ -22,8 +23,5 @@ public class WinScreen {
 		contentPane.setFont(new Font("Roboto", Font.BOLD, 40));
 		contentPane.setLayout(new GridBagLayout());
 		frame.setContentPane(contentPane);
-		
-		
 	}
 }
-

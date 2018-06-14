@@ -5,7 +5,6 @@ import javax.swing.ImageIcon;
 
 public class Heart
 {
-
 	int x;
 	private URL i;
 	private ImageIcon icon;
@@ -29,10 +28,8 @@ public class Heart
 		return x;
 	}
 	
-	
 	public Image getImage()
 	{
 		return img;
 	}
-	
 }

@@ -5,10 +5,7 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.URL;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -16,14 +13,8 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import sun.audio.AudioData;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
-
 public abstract class Frame implements ActionListener
 {
-	
 	private static Button button;
 	private static Board b;
 	private static JFrame frame;
@@ -61,7 +52,7 @@ public abstract class Frame implements ActionListener
 				frame.setVisible(false);
 				FrameTest f = new FrameTest();
 				try {
-					playSound(AudioSystem.getAudioInputStream(new File("C:\\Users\\K-$izzle\\git\\tbdTitle\\src\\asset\\MonkeyNoise.wav")));
+					playSound(AudioSystem.getAudioInputStream(new File("C:\\Users\\Bryce\\git\\tbdTitle\\src\\asset\\MonkeyNoise.wav")));
 				} catch (UnsupportedAudioFileException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -77,22 +68,18 @@ public abstract class Frame implements ActionListener
 		contentPane.setIcon(b.returnIcon());
 		contentPane.add(button);
 		frame.setContentPane(contentPane);
-
-		
 		
 		frame.setVisible(true);
-		
-		
 	}
 	
 	public static void playSound(AudioInputStream audioInputStream)
 	{
-		try {
+		try
+		{
 			Clip clip = AudioSystem.getClip();
 			clip.open(audioInputStream);
 			clip.start();
-		}catch (Exception e) {
-			
 		}
+		catch (Exception e){}
 	}
 }

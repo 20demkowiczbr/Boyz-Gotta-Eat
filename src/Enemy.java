@@ -4,8 +4,8 @@ import javax.swing.*;
 
 
 
-public class Enemy {
-
+public class Enemy
+{
 	int x;
 	private URL i;
 	private ImageIcon icon;
@@ -39,7 +39,8 @@ public class Enemy {
 		x = -1300;
 	}
 	
-	public Rectangle getBounds() {
+	public Rectangle getBounds() 
+	{
 		Rectangle r = new Rectangle (x, 510, 50, 50);
 		return r;
 	}
