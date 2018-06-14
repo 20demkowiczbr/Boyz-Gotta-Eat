@@ -23,6 +23,10 @@ public class Player
 	Enemy en;
 	Enemy en2;
 	Enemy en3;
+	Enemy en4;
+	Enemy en5;
+	Enemy en6;
+	Enemy en7;
 	
 	Heart h1;
 	Heart h2;
@@ -32,6 +36,10 @@ public class Player
 	KangFood k2;
 	KangFood k3;
 	KangFood k4;
+	KangFood k5;
+	KangFood k6;
+	KangFood k7;
+	KangFood k8;
 	
 	int health;
 	
@@ -63,6 +71,10 @@ public class Player
 		en = new Enemy(1300);
 		en2 = new Enemy(2000);
 		en3 = new Enemy(2500);
+		en4 = new Enemy(3000);
+		en5 = new Enemy(3400);
+		en6 = new Enemy(3800);
+		en7 = new Enemy(4200);
 		
 		h1 = new Heart(0);
 		h2 = new Heart(45);
@@ -72,6 +84,10 @@ public class Player
 		k2 = new KangFood(1300);
 		k3 = new KangFood(2000);
 		k4 = new KangFood(2500);
+		k5 = new KangFood(3000);
+		k6 = new KangFood(3400);
+		k7 = new KangFood(3800);
+		k8 = new KangFood(4200);
 		}
 		
 	public void move() 
@@ -85,10 +101,18 @@ public class Player
 				en.subtractX();
 				en2.subtractX();
 				en3.subtractX();
+				en4.subtractX();
+				en5.subtractX();
+				en6.subtractX();
+				en7.subtractX();
 				k1.subtractX();
 				k2.subtractX();
 				k3.subtractX();
 				k4.subtractX();
+				k5.subtractX();
+				k6.subtractX();
+				k7.subtractX();
+				k8.subtractX();
 				x = x + dx;
 				nx2 = nx2 + dx;
 				nx = nx + dx;
@@ -131,6 +155,23 @@ public class Player
 		return en3;
 	}
 	
+	public Enemy returnEnemy4() 
+	{
+		return en4;
+	}
+	public Enemy returnEnemy5() 
+	{
+		return en5;
+	}
+	public Enemy returnEnemy6() 
+	{
+		return en6;
+	}
+	public Enemy returnEnemy7() 
+	{
+		return en7;
+	}
+	
 	public Heart returnHeart1()
 	{
 		return h1;
@@ -166,6 +207,26 @@ public class Player
 		return k4;
 	}
 	
+	public KangFood returnKF5()
+	{
+		return k5;
+	}
+	
+	public KangFood returnKF6()
+	{
+		return k6;
+	}
+	
+	public KangFood returnKF7()
+	{
+		return k7;
+	}
+	
+	public KangFood returnKF8()
+	{
+		return k8;
+	}
+	
 	public int returnDist()
 	{
 		return x - 200;
@@ -173,6 +234,7 @@ public class Player
 	
 	public void noMove() {
 		dx = 0;
+		dy = 0;
 	}
 	
 	public void keyPressed(KeyEvent e)
