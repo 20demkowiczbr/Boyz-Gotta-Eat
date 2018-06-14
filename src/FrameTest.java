@@ -15,11 +15,6 @@ public class FrameTest {
 	private static URL M;
 	private static String L;
 	
-	public static void main(String[] args)
-	{
-		new FrameTest();
-		music();
-	}
 	
 	public FrameTest() 
 	{

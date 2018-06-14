@@ -44,10 +44,8 @@ public abstract class Frame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				frame.setTitle("Jungle");
-				frame.setSize(1088,640);
-				//frame.add(new Game());
-				frame.remove(contentPane);			
+				frame.setVisible(false);
+				FrameTest f = new FrameTest();
 			}
 		});
 		
