@@ -63,8 +63,8 @@ public class Player {
 		en2 = new Enemy(2000);
 		
 		h1 = new Heart(0);
-		h2 = new Heart(30);
-		h3 = new Heart(60);
+		h2 = new Heart(45);
+		h3 = new Heart(90);
 		
 		k1 = new KangFood(700);
 		k2 = new KangFood(1300);

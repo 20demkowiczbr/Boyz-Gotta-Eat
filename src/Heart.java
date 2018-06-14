@@ -14,7 +14,7 @@ public class Heart {
 		x = num;
 		i = getClass().getResource("asset/PixelHeart.png");
 		icon = new ImageIcon(i);
-		img = icon.getImage().getScaledInstance(25,25,Image.SCALE_DEFAULT);
+		img = icon.getImage().getScaledInstance(40,40,Image.SCALE_DEFAULT);
 	}
 	
 	public void delete() {

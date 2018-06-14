@@ -104,7 +104,6 @@ public class Game extends JPanel implements ActionListener, Runnable
 			k4.delete();
 			score++;
 		}
-			
 		repaint();
 	}
 	
@@ -142,13 +141,13 @@ public class Game extends JPanel implements ActionListener, Runnable
 		
 		g2d.drawImage(h3.getImage(), h3.getX(), 0, null);
 		
-		g2d.drawImage(k1.getImage(), k1.getX(), 440, null);
+		g2d.drawImage(k1.getImage(), k1.getX(), 350, null);
 		
-		g2d.drawImage(k2.getImage(), k2.getX(), 440, null);
+		g2d.drawImage(k2.getImage(), k2.getX(), 350, null);
 		
-		g2d.drawImage(k3.getImage(), k3.getX(), 440, null);
+		g2d.drawImage(k3.getImage(), k3.getX(), 350, null);
 		
-		g2d.drawImage(k4.getImage(), k4.getX(), 440, null);
+		g2d.drawImage(k4.getImage(), k4.getX(), 350, null);
 	
 	}
 	
