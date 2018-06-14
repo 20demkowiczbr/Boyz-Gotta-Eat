@@ -134,6 +134,22 @@ public class Player {
 		return h3;
 	}
 	
+	public KangFood returnKF1() {
+		return k1;
+	}
+	
+	public KangFood returnKF2() {
+		return k2;
+	}
+	
+	public KangFood returnKF3() {
+		return k3;
+	}
+	
+	public KangFood returnKF4() {
+		return k4;
+	}
+	
 	public int returnScore()
 	{
 		return x - 200;

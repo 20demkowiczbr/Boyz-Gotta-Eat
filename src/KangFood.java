@@ -1,6 +1,7 @@
 
 
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.net.URL;
 
 import javax.swing.ImageIcon;
@@ -16,7 +17,7 @@ public class KangFood {
 		x = num;
 		i = getClass().getResource("asset/PixelBananaFinal.png");
 		icon = new ImageIcon(i);
-		img = icon.getImage().getScaledInstance(40,40,Image.SCALE_DEFAULT);
+		img = icon.getImage().getScaledInstance(80,80,Image.SCALE_DEFAULT);
 	}
 	
 	public void delete() {
@@ -35,6 +36,11 @@ public class KangFood {
 	public Image getImage()
 	{
 		return img;
+	}
+	
+	public Rectangle getBounds() {
+		Rectangle r = new Rectangle (x, 440, 40, 40);
+		return r;
 	}
 	
 }

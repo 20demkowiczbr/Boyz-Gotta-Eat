@@ -10,12 +10,22 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class Game extends JPanel implements ActionListener, Runnable
 {
+	
+	int score = 0;
+	
 	Player p;
+	
 	Enemy en;
 	Enemy en2;
+	
 	Heart h1;
 	Heart h2;
 	Heart h3;
+	
+	KangFood k1;
+	KangFood k2;
+	KangFood k3;
+	KangFood k4;
 	
 	int count = 4;
 	
@@ -29,11 +39,18 @@ public class Game extends JPanel implements ActionListener, Runnable
 	public Game() 
 	{
 		p = new Player();
+		
 		en = p.returnEnemy();
 		en2 = p.returnEnemy2();
+		
 		h1 = p.returnHeart1();
 		h2 = p.returnHeart2();
 		h3 = p.returnHeart3();
+		
+		k1 = p.returnKF1();
+		k2 = p.returnKF2();
+		k3 = p.returnKF3();
+		k4 = p.returnKF4();
 		
 		addKeyListener(new ActionListener());
 		setFocusable(true);
@@ -66,6 +83,26 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h2.delete();
 			else if(count == 1)
 				h1.delete();
+		}
+		
+		if (k1.getBounds().intersects(getBound()))	{
+			k1.delete();
+			score++;
+		}
+		
+		if (k2.getBounds().intersects(getBound()))	{
+			k2.delete();
+			score++;
+		}
+		
+		if (k3.getBounds().intersects(getBound()))	{
+			k3.delete();
+			score++;
+		}
+		
+		if (k4.getBounds().intersects(getBound()))	{
+			k4.delete();
+			score++;
 		}
 			
 		repaint();
@@ -104,6 +141,14 @@ public class Game extends JPanel implements ActionListener, Runnable
 		g2d.drawImage(h2.getImage(), h2.getX(), 0, null);
 		
 		g2d.drawImage(h3.getImage(), h3.getX(), 0, null);
+		
+		g2d.drawImage(k1.getImage(), k1.getX(), 440, null);
+		
+		g2d.drawImage(k2.getImage(), k2.getX(), 440, null);
+		
+		g2d.drawImage(k3.getImage(), k3.getX(), 440, null);
+		
+		g2d.drawImage(k4.getImage(), k4.getX(), 440, null);
 	
 	}
 	
