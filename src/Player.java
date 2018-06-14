@@ -157,9 +157,13 @@ public class Player {
 		return k4;
 	}
 	
-	public int returnScore()
+	public int returnDist()
 	{
 		return x - 200;
+	}
+	
+	public void noMove() {
+		dx = 0;
 	}
 	
 	public void keyPressed(KeyEvent e)

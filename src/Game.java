@@ -73,8 +73,11 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h3.delete();
 			else if(count == 2)
 				h2.delete();
-			else if(count == 1)
+			else if(count == 1) {
 				h1.delete();
+				p.noMove();
+				FinalScreen s = new FinalScreen();
+			}
 		}
 		if (en2.getBounds().intersects(getBound())) {
 			en2.delete();
@@ -83,8 +86,11 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h3.delete();
 			else if(count == 2)
 				h2.delete();
-			else if(count == 1)
+			else if(count == 1) {
 				h1.delete();
+				p.noMove();
+				FinalScreen s = new FinalScreen();
+			}
 		}
 		if (en3.getBounds().intersects(getBound())) {
 			en3.delete();
@@ -93,8 +99,13 @@ public class Game extends JPanel implements ActionListener, Runnable
 				h3.delete();
 			else if(count == 2)
 				h2.delete();
-			else if(count == 1)
+			else if(count == 1) {
 				h1.delete();
+				p.noMove();
+				FinalScreen s = new FinalScreen();
+			}
+				
+			
 		}
 		if (k1.getBounds().intersects(getBound()))	{
 			k1.delete();
