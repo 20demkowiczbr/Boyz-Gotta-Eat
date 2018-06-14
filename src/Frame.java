@@ -49,8 +49,10 @@ public abstract class Frame implements ActionListener
 			}
 		});
 		
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		button.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				
 				Board b2 = new Board("/asset/background.png");
 				frame.setTitle("Jungle");
@@ -68,6 +70,8 @@ public abstract class Frame implements ActionListener
 		contentPane.setIcon(b.returnIcon());
 		contentPane.add(button);
 		frame.setContentPane(contentPane);
+
+		
 		
 		frame.setVisible(true);
 		

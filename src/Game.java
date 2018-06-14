@@ -66,7 +66,8 @@ public class Game extends JPanel implements ActionListener, Runnable
 	public void actionPerformed(ActionEvent e)
 	{
 		p.move();
-		if (en.getBounds().intersects(getBound())) {
+		if (en.getBounds().intersects(getBound())) 
+		{
 			en.delete();
 			count--;
 			if (count == 3)
@@ -76,10 +77,11 @@ public class Game extends JPanel implements ActionListener, Runnable
 			else if(count == 1) {
 				h1.delete();
 				p.noMove();
-				FinalScreen s = new FinalScreen();
+				FinalScreen s = new FinalScreen(p.returnDist() + score);
 			}
 		}
-		if (en2.getBounds().intersects(getBound())) {
+		if (en2.getBounds().intersects(getBound()))
+		{
 			en2.delete();
 			count--;
 			if (count == 3)
@@ -89,10 +91,11 @@ public class Game extends JPanel implements ActionListener, Runnable
 			else if(count == 1) {
 				h1.delete();
 				p.noMove();
-				FinalScreen s = new FinalScreen();
+				FinalScreen s = new FinalScreen(p.returnDist() + score);
 			}
 		}
-		if (en3.getBounds().intersects(getBound())) {
+		if (en3.getBounds().intersects(getBound()))
+		{
 			en3.delete();
 			count--;
 			if (count == 3)
@@ -102,26 +105,32 @@ public class Game extends JPanel implements ActionListener, Runnable
 			else if(count == 1) {
 				h1.delete();
 				p.noMove();
-				FinalScreen s = new FinalScreen();
+				FinalScreen s = new FinalScreen(p.returnDist() + score);
 			}
-				
+
 			
 		}
-		if (k1.getBounds().intersects(getBound()))	{
+		if (k1.getBounds().intersects(getBound()))	
+		{
 			k1.delete();
-			score++;
+			score = score + 400;
 		}
-		if (k2.getBounds().intersects(getBound()))	{
+		if (k2.getBounds().intersects(getBound()))	
+		{
 			k2.delete();
-			score++;
+			score = score + 400;
+
 		}
-		if (k3.getBounds().intersects(getBound()))	{
+		if (k3.getBounds().intersects(getBound()))
+		{
 			k3.delete();
-			score++;
+			score = score + 400;
+
 		}
-		if (k4.getBounds().intersects(getBound()))	{
+		if (k4.getBounds().intersects(getBound()))
+		{
 			k4.delete();
-			score++;
+			score = score + 400;
 		}
 		repaint();
 	}
@@ -223,12 +232,20 @@ public class Game extends JPanel implements ActionListener, Runnable
 		{
 			height = height + 2;
 			if (height == 420)
-				done = true;
+			{
+			done = true;
+			}
 		}
 	}
 	
-	public Rectangle getBound() {
+	public Rectangle getBound() 
+	{
 		Rectangle r = new Rectangle (p.left, height, 130, 140);
 		return r;
+	}
+	
+	public int getDist()
+	{
+		return p.returnDist();
 	}
 }

@@ -5,8 +5,8 @@ import java.net.URL;
 
 import javax.swing.ImageIcon;
 
-public class Player {
-
+public class Player
+{
 	int x, dx, y, dy, nx2, nx, left; //Note that "x" is distance past starting point, while "left" is that physical position on screen
 	private URL f;
 	private URL l;
@@ -121,39 +121,48 @@ public class Player {
 		return en;
 	}
 	
-	public Enemy returnEnemy2() {
+	public Enemy returnEnemy2()
+	{
 		return en2;
 	}
 	
-	public Enemy returnEnemy3() {
+	public Enemy returnEnemy3() 
+	{
 		return en3;
 	}
 	
-	public Heart returnHeart1() {
+	public Heart returnHeart1()
+	{
 		return h1;
 	}
 	
-	public Heart returnHeart2() {
+	public Heart returnHeart2()
+	{
 		return h2;
 	}
 
-	public Heart returnHeart3() {
+	public Heart returnHeart3() 
+	{
 		return h3;
 	}
 	
-	public KangFood returnKF1() {
+	public KangFood returnKF1()
+	{
 		return k1;
 	}
 	
-	public KangFood returnKF2() {
+	public KangFood returnKF2() 
+	{
 		return k2;
 	}
 	
-	public KangFood returnKF3() {
+	public KangFood returnKF3()
+	{
 		return k3;
 	}
 	
-	public KangFood returnKF4() {
+	public KangFood returnKF4()
+	{
 		return k4;
 	}
 	
@@ -181,7 +190,10 @@ public class Player {
 			walkAnimF();
 		}
 		if(key == KeyEvent.VK_W)
+		{
 			dy = 1;
+		}
+		
 	}
 	
 	public void keyReleased(KeyEvent e)

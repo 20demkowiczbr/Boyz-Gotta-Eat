@@ -13,7 +13,7 @@ public class FinalScreen {
 	
 	JLabel contentPane;
 	
-	public FinalScreen() 
+	public FinalScreen(int num) 
 	{
 		JFrame frame = new JFrame("danky kang");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -22,10 +22,11 @@ public class FinalScreen {
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		
-		contentPane = new JLabel("Game Over", SwingConstants.CENTER);
+		contentPane = new JLabel(("Game Over   Score: " + num), SwingConstants.CENTER);
 		contentPane.setFont(new Font("Roboto", Font.BOLD, 40));
 		contentPane.setLayout(new GridBagLayout());
-		//contentPane.add(text);
 		frame.setContentPane(contentPane);
+		
+		
 	}
 }

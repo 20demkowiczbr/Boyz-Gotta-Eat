@@ -14,8 +14,8 @@ public class FrameTest {
 
 	private static URL M;
 	private static String L;
-	
-	
+
+
 	public FrameTest() 
 	{
 		M = getClass().getResource("asset/Monkey Noise.wav");
@@ -26,9 +26,12 @@ public class FrameTest {
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
+
+	
 	}
 	
-	public static void music() {
+	public static void music()
+	{
 		AudioPlayer MGP = AudioPlayer.player;
 		AudioStream BGM;
 		AudioData MD;
