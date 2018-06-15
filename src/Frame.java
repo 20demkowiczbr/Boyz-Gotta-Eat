@@ -24,8 +24,6 @@ public abstract class Frame implements ActionListener
 	{
 		b = new Board("/asset/title.png");
 		
-		File monkeyNoise = new File("MonkeyNoise.wav");
-		
 		frame = new JFrame();
 		frame.setTitle("Platformer");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -51,15 +49,6 @@ public abstract class Frame implements ActionListener
 			{
 				frame.setVisible(false);
 				FrameTest f = new FrameTest();
-				try {
-					playSound(AudioSystem.getAudioInputStream(new File("C:\\Users\\Bryce\\git\\tbdTitle\\src\\asset\\MonkeyNoise.wav")));
-				} catch (UnsupportedAudioFileException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
 			}
 		});
 		
@@ -72,14 +61,4 @@ public abstract class Frame implements ActionListener
 		frame.setVisible(true);
 	}
 	
-	public static void playSound(AudioInputStream audioInputStream)
-	{
-		try
-		{
-			Clip clip = AudioSystem.getClip();
-			clip.open(audioInputStream);
-			clip.start();
-		}
-		catch (Exception e){}
-	}
 }
